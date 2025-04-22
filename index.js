@@ -40,9 +40,16 @@ const User = mongoose.model("User", userSchema);
 //     console.log(res);
 // })
 
-User.find({ age: { $gt: 47 } })
+// User.findById('6807714c7ad5f49b2286169e')
+//     .then((res) => {
+//         console.log(res);
+//     }).catch((err) => {
+//         console.log(err);
+//     })
+
+User.findByIdAndUpdate({ _id: '6807714c7ad5f49b2286169f' }, { age: 46 }, { new: true })
     .then((res) => {
-        console.log(res[0].name);
+        console.log(res)
     }).catch((err) => {
         console.log(err);
     })
