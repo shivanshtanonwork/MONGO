@@ -54,9 +54,9 @@ const User = mongoose.model("User", userSchema);
 //         console.log(err);
 //     })
 
-User.findOneAndDelete({ name: "Adwita" })
-    .then((res) => {
-        console.log(res)
-    }).catch((err) => {
-        console.log(err);
-    })
+// User.findOneAndDelete({ name: "Adwita" })
+//     .then((res) => {
+//         console.log(res)
+//     }).catch((err) => {
+//         console.log(err);
+//     })
