@@ -47,7 +47,14 @@ const User = mongoose.model("User", userSchema);
 //         console.log(err);
 //     })
 
-User.findByIdAndUpdate({ _id: '6807714c7ad5f49b2286169f' }, { age: 46 }, { new: true })
+// User.findByIdAndUpdate({ _id: '6807714c7ad5f49b2286169f' }, { age: 46 }, { new: true })
+//     .then((res) => {
+//         console.log(res)
+//     }).catch((err) => {
+//         console.log(err);
+//     })
+
+User.findOneAndDelete({ name: "Adwita" })
     .then((res) => {
         console.log(res)
     }).catch((err) => {
