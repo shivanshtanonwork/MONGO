@@ -13,21 +13,34 @@ const bookSchema = new mongoose.Schema({
     title: {
         type: String,
         required: true,
+        maxLength: 20,
     },
     author: {
         type: String,
     },
     price: {
         type: Number,
+        min: 100,
     },
+    discount: {
+        type: Number,
+        default: 0
+    },
+    category: {
+        type: String,
+        enum: ["fiction", "non-fiction"],
+    },
+    genre: [String]
 });
 
 const Book = mongoose.model("Book", bookSchema);
 
 let book1 = new Book({
-    title: "How to kill a Mockingbird",
-    author: "Harper Lee",
-    price: 2000,
+    title: "Marvel Comics v2",
+    author: "Stan Lee",
+    price: 200,
+    category: "fiction",
+    genre: ["comics", "superhero", "fiction"]
 });
 
 book1
@@ -37,3 +50,10 @@ book1
     }).catch((err) => {
         console.log(err)
     })
+
+// Book.findByIdAndDelete({ _id: '6808c19cec8f06ae84c6cc5f' })
+//     .then((res) => {
+//         console.log(res);
+//     }).catch((err) => {
+//         console.log(err)
+//     })
